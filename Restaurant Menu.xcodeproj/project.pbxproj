@@ -521,7 +521,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3X5PNF8SNP;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Restaurant Menu/Info.plist";
+				INFOPLIST_FILE = "Restaurant Menu/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -549,7 +549,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3X5PNF8SNP;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Restaurant Menu/Info.plist";
+				INFOPLIST_FILE = "Restaurant Menu/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
