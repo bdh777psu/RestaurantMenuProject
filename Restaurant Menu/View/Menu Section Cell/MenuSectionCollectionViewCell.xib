@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuSectionCell" id="c5g-qx-M2f" customClass="MenuSectionCollectionViewCell" customModule="Restaurant_Menu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="128" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="k6V-Im-OEu">
+                <rect key="frame" x="0.0" y="0.0" width="128" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMALL PLATES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyq-GT-d0l" userLabel="Menu Section Title">
+                        <rect key="frame" x="4.5" y="40" width="119" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" name="MenuTitleGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOc-WG-uF6" userLabel="Selected Separator View">
+                        <rect key="frame" x="0.0" y="98" width="128" height="2"/>
+                        <color key="backgroundColor" name="MenuTitleGrey"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="cYq-Ry-PFT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="eOc-WG-uF6" secondAttribute="bottom" id="HPi-gs-PxI"/>
+                    <constraint firstItem="Eyq-GT-d0l" firstAttribute="leading" secondItem="k6V-Im-OEu" secondAttribute="leading" constant="4.6666666666666714" id="J1O-XI-tqY"/>
+                    <constraint firstAttribute="trailing" secondItem="eOc-WG-uF6" secondAttribute="trailing" id="Wd6-V7-RhN"/>
+                    <constraint firstItem="Eyq-GT-d0l" firstAttribute="centerY" secondItem="k6V-Im-OEu" secondAttribute="centerY" id="e6u-0V-cGs"/>
+                    <constraint firstItem="eOc-WG-uF6" firstAttribute="leading" secondItem="k6V-Im-OEu" secondAttribute="leading" id="w6x-eK-bBF"/>
+                    <constraint firstItem="Eyq-GT-d0l" firstAttribute="centerX" secondItem="k6V-Im-OEu" secondAttribute="centerX" id="ybp-aP-E2T"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="128" height="100"/>
+            <connections>
+                <outlet property="menuSectionTitleLabel" destination="Eyq-GT-d0l" id="TII-YV-Fyo"/>
+            </connections>
+            <point key="canvasLocation" x="133" y="11"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="MenuTitleGrey">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
