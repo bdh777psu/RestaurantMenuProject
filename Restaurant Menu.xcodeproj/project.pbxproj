@@ -16,6 +16,8 @@
 		CD8485EB277496D900B4BEC6 /* Restaurant_MenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8485EA277496D900B4BEC6 /* Restaurant_MenuTests.swift */; };
 		CD8485F5277496D900B4BEC6 /* Restaurant_MenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8485F4277496D900B4BEC6 /* Restaurant_MenuUITests.swift */; };
 		CD8485F7277496D900B4BEC6 /* Restaurant_MenuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8485F6277496D900B4BEC6 /* Restaurant_MenuUITestsLaunchTests.swift */; };
+		CDB2A5E92774A23D00B40B52 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB2A5E82774A23D00B40B52 /* Montserrat-Regular.ttf */; };
+		CDB2A5EB2774A26C00B40B52 /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB2A5EA2774A26C00B40B52 /* PlayfairDisplay-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		CD8485F0277496D900B4BEC6 /* Restaurant MenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Restaurant MenuUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8485F4277496D900B4BEC6 /* Restaurant_MenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant_MenuUITests.swift; sourceTree = "<group>"; };
 		CD8485F6277496D900B4BEC6 /* Restaurant_MenuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant_MenuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CDB2A5E82774A23D00B40B52 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../../Downloads/Montserrat/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		CDB2A5EA2774A26C00B40B52 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				CD8485DC277496D900B4BEC6 /* Assets.xcassets */,
 				CD8485DE277496D900B4BEC6 /* LaunchScreen.storyboard */,
 				CD8485E1277496D900B4BEC6 /* Info.plist */,
+				CDB2A5E62774A1A500B40B52 /* Fonts */,
 			);
 			path = "Restaurant Menu";
 			sourceTree = "<group>";
@@ -125,6 +130,15 @@
 				CD8485F6277496D900B4BEC6 /* Restaurant_MenuUITestsLaunchTests.swift */,
 			);
 			path = "Restaurant MenuUITests";
+			sourceTree = "<group>";
+		};
+		CDB2A5E62774A1A500B40B52 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CDB2A5E82774A23D00B40B52 /* Montserrat-Regular.ttf */,
+				CDB2A5EA2774A26C00B40B52 /* PlayfairDisplay-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +245,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDB2A5EB2774A26C00B40B52 /* PlayfairDisplay-Regular.ttf in Resources */,
+				CDB2A5E92774A23D00B40B52 /* Montserrat-Regular.ttf in Resources */,
 				CD8485E0277496D900B4BEC6 /* LaunchScreen.storyboard in Resources */,
 				CD8485DD277496D900B4BEC6 /* Assets.xcassets in Resources */,
 				CD8485DB277496D800B4BEC6 /* Main.storyboard in Resources */,
