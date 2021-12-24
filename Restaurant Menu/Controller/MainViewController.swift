@@ -14,12 +14,18 @@ class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: - Variables
+    let defaultRestaurant: String = "4072702673999819"
+    let restaurantService = RestaurantService()
+    
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
         setupTableView()
+        
+        performFetchRequest()
     }
     
     func setupCollectionView() {
@@ -30,6 +36,10 @@ class MainViewController: UIViewController {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func performFetchRequest() {
+        restaurantService.fetchRestaurantData(lat: "42.361145", lon: "-71.057083")
     }
 }
 

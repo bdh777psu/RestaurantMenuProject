@@ -12,6 +12,7 @@
 		CD53BFB42774BED9006BD1FD /* MenuSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD53BFB22774BED9006BD1FD /* MenuSectionCollectionViewCell.xib */; };
 		CD53BFB72774BF5B006BD1FD /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53BFB52774BF5B006BD1FD /* MenuItemTableViewCell.swift */; };
 		CD53BFB82774BF5B006BD1FD /* MenuItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD53BFB62774BF5B006BD1FD /* MenuItemTableViewCell.xib */; };
+		CD53C33527753819006BD1FD /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53C33427753819006BD1FD /* RestaurantService.swift */; };
 		CD8485D4277496D800B4BEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8485D3277496D800B4BEC6 /* AppDelegate.swift */; };
 		CD8485D6277496D800B4BEC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8485D5277496D800B4BEC6 /* SceneDelegate.swift */; };
 		CD8485DB277496D800B4BEC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8485D9277496D800B4BEC6 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		CD53BFB22774BED9006BD1FD /* MenuSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD53BFB52774BF5B006BD1FD /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		CD53BFB62774BF5B006BD1FD /* MenuItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemTableViewCell.xib; sourceTree = "<group>"; };
+		CD53C33427753819006BD1FD /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
 		CD8485D0277496D800B4BEC6 /* Restaurant Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Restaurant Menu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8485D3277496D800B4BEC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD8485D5277496D800B4BEC6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,13 @@
 			path = "Menu Item Cell";
 			sourceTree = "<group>";
 		};
+		CD53C33627753E5A006BD1FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CD8485C7277496D800B4BEC6 = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +140,8 @@
 			children = (
 				CDB2A5EF2774B35A00B40B52 /* View */,
 				CDB2A5F02774B35E00B40B52 /* Controller */,
-				CDB2A5EE2774B34E00B40B52 /* Model */,
+				CD53C33627753E5A006BD1FD /* Model */,
+				CDB2A5EE2774B34E00B40B52 /* Service */,
 				CDB2A5F12774B37200B40B52 /* Supporting Files */,
 			);
 			path = "Restaurant Menu";
@@ -163,11 +173,12 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		CDB2A5EE2774B34E00B40B52 /* Model */ = {
+		CDB2A5EE2774B34E00B40B52 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				CD53C33427753819006BD1FD /* RestaurantService.swift */,
 			);
-			path = Model;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		CDB2A5EF2774B35A00B40B52 /* View */ = {
@@ -217,6 +228,8 @@
 			dependencies = (
 			);
 			name = "Restaurant Menu";
+			packageProductDependencies = (
+			);
 			productName = "Restaurant Menu";
 			productReference = CD8485D0277496D800B4BEC6 /* Restaurant Menu.app */;
 			productType = "com.apple.product-type.application";
@@ -289,6 +302,8 @@
 				Base,
 			);
 			mainGroup = CD8485C7277496D800B4BEC6;
+			packageReferences = (
+			);
 			productRefGroup = CD8485D1277496D800B4BEC6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -337,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD53BFAE2774BA72006BD1FD /* MainViewController.swift in Sources */,
+				CD53C33527753819006BD1FD /* RestaurantService.swift in Sources */,
 				CD8485D4277496D800B4BEC6 /* AppDelegate.swift in Sources */,
 				CD8485D6277496D800B4BEC6 /* SceneDelegate.swift in Sources */,
 				CD53BFB32774BED9006BD1FD /* MenuSectionCollectionViewCell.swift in Sources */,
@@ -522,6 +538,7 @@
 				DEVELOPMENT_TEAM = 3X5PNF8SNP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Restaurant Menu/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Restaurants;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -550,6 +567,7 @@
 				DEVELOPMENT_TEAM = 3X5PNF8SNP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Restaurant Menu/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Restaurants;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
