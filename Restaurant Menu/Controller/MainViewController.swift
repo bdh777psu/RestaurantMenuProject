@@ -20,12 +20,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var menuItemTableView: UITableView!
 
     // MARK: - Variables
-    var restaurantService = RestaurantManager()
-    var restaurant: Restaurant?
-    var menu: Menus?
+    private var restaurantService = RestaurantManager()
+    private var restaurant: Restaurant?
+    private var menu: Menus?
     
-    var defaultSection: Int = 1
-    var selectedSectionIndexPath: IndexPath?
+    private var selectedSectionIndexPath: IndexPath = IndexPath(item: 1, section: 0)
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -52,8 +51,6 @@ class MainViewController: UIViewController {
         
         let nib = UINib(nibName: "MenuSectionCollectionViewCell", bundle: nil)
         menuSectionCollectionView.register(nib, forCellWithReuseIdentifier: "MenuSectionCell")
-        
-        menuSectionCollectionView.selectItem(at: selectedSectionIndexPath, animated: false, scrollPosition: .centeredHorizontally)
     }
 
     func setupTableView() {
@@ -81,11 +78,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuSectionCell", for: indexPath) as! MenuSectionCollectionViewCell
 
-        if indexPath.row == defaultSection {
-            selectedSectionIndexPath = indexPath
+        if indexPath.row == selectedSectionIndexPath.item {
             cell.isSelected = true
+            cell.selectedSeparatorView.isHidden = false
         } else {
             cell.isSelected = false
+            cell.selectedSeparatorView.isHidden = true
         }
         
         cell.menuSectionTitleLabel.text = menu?.menuSections?[indexPath.row].sectionName?.uppercased()
@@ -117,13 +115,13 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return menu?.menuSections?[self.selectedSectionIndexPath?.row ?? 1].menuItems?.count ?? 0
+        return menu?.menuSections?[self.selectedSectionIndexPath.row].menuItems?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath) as! MenuItemTableViewCell
         
-        let item = menu?.menuSections?[self.selectedSectionIndexPath?.row ?? 1].menuItems?[indexPath.row]
+        let item = menu?.menuSections?[self.selectedSectionIndexPath.row].menuItems?[indexPath.row]
 
         cell.menuItemNameTitleLabel.text = item?.name
         cell.menuItemDescriptionLabel.text = item?.descriptionValue?.replacingOccurrences(of: "[\\[\\],+]", with: " /", options: .regularExpression, range: nil)
@@ -141,6 +139,7 @@ extension MainViewController: RestaurantServiceDelegate {
         DispatchQueue.main.async {
             self.restaurantNameLabel.text = self.restaurant?.data?.first?.restaurantName
             self.menuNameLabel.text = self.menu?.menuName
+            self.menuSectionCollectionView.selectItem(at: self.selectedSectionIndexPath, animated: false, scrollPosition: .centeredHorizontally)
         }
         
         self.menuSectionCollectionView.reloadData()
