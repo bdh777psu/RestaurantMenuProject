@@ -11,9 +11,16 @@ class MenuSectionCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Variables
     @IBOutlet weak var menuSectionTitleLabel: UILabel!
-
+    @IBOutlet weak var selectedSeparatorView: UIView!
+    
     // MARK: - Awake
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        selectedSeparatorView.isHidden = true
+    }
+    
+    override func prepareForReuse() -> Void {
+        selectedSeparatorView.isHidden = true
     }
 }

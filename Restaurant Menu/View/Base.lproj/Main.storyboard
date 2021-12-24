@@ -43,10 +43,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYc-wJ-zw2" userLabel="Menu Title Container View">
-                                <rect key="frame" x="30" y="172" width="368" height="122"/>
+                                <rect key="frame" x="30" y="172" width="368" height="151"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MENU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nK6-36-P32" userLabel="Menu Title">
-                                        <rect key="frame" x="142" y="47" width="84" height="32"/>
+                                        <rect key="frame" x="142" y="75" width="84" height="33"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="26"/>
                                         <color key="textColor" name="MenuTitleGrey"/>
                                         <nil key="highlightedColor"/>
@@ -55,12 +55,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="nK6-36-P32" secondAttribute="bottom" constant="43" id="2je-GM-ktz"/>
-                                    <constraint firstAttribute="height" constant="122" id="3Aj-cD-h70"/>
+                                    <constraint firstAttribute="height" constant="151" id="3Aj-cD-h70"/>
+                                    <constraint firstItem="nK6-36-P32" firstAttribute="top" secondItem="fYc-wJ-zw2" secondAttribute="top" constant="75" id="Sl5-Jt-UvB"/>
                                     <constraint firstItem="nK6-36-P32" firstAttribute="centerX" secondItem="fYc-wJ-zw2" secondAttribute="centerX" id="kE4-lX-ptT"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lIn-sN-gl4">
-                                <rect key="frame" x="30" y="294" width="368" height="100"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lIn-sN-gl4">
+                                <rect key="frame" x="30" y="323" width="368" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="7ga-Y1-pt4"/>
@@ -73,8 +74,8 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="397" estimatedRowHeight="397" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-BA-okD">
-                                <rect key="frame" x="0.0" y="394" width="428" height="498"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="400" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-BA-okD">
+                                <rect key="frame" x="30" y="423" width="368" height="469"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
                             </tableView>
@@ -82,7 +83,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ufg-BA-okD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="53t-RM-wVY"/>
+                            <constraint firstItem="ufg-BA-okD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="53t-RM-wVY"/>
                             <constraint firstItem="lIn-sN-gl4" firstAttribute="top" secondItem="fYc-wJ-zw2" secondAttribute="bottom" id="Fau-Ah-SIo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lIn-sN-gl4" secondAttribute="trailing" constant="30" id="HhE-WY-7fw"/>
                             <constraint firstItem="fYc-wJ-zw2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="IL0-el-fRe"/>
@@ -91,17 +92,18 @@
                             <constraint firstItem="lIn-sN-gl4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="dfn-ki-aUL"/>
                             <constraint firstItem="fYc-wJ-zw2" firstAttribute="top" secondItem="yQ3-Uc-lCu" secondAttribute="bottom" id="fTB-3t-L9W"/>
                             <constraint firstItem="ufg-BA-okD" firstAttribute="top" secondItem="lIn-sN-gl4" secondAttribute="bottom" id="fV8-fU-vqK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ufg-BA-okD" secondAttribute="trailing" id="m9p-UB-EM9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ufg-BA-okD" secondAttribute="trailing" constant="30" id="m9p-UB-EM9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yQ3-Uc-lCu" secondAttribute="trailing" id="nyD-vR-FV3"/>
                             <constraint firstItem="ufg-BA-okD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="oQI-g4-xL6"/>
                             <constraint firstItem="yQ3-Uc-lCu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xK5-CR-FZV"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="lIn-sN-gl4" id="UW6-m7-aef"/>
+                        <outlet property="menuItemTableView" destination="ufg-BA-okD" id="bHc-Gg-UbO"/>
                         <outlet property="menuNameLabel" destination="nK6-36-P32" id="fUm-FA-tpl"/>
+                        <outlet property="menuSectionCollectionView" destination="lIn-sN-gl4" id="UW6-m7-aef"/>
+                        <outlet property="restaurantNameContainerView" destination="yQ3-Uc-lCu" id="E8f-dJ-ggE"/>
                         <outlet property="restaurantNameLabel" destination="h6c-bD-mbf" id="txf-Mq-lZ2"/>
-                        <outlet property="tableView" destination="ufg-BA-okD" id="bHc-Gg-UbO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

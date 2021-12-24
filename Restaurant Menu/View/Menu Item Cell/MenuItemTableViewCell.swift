@@ -10,7 +10,7 @@ import UIKit
 class MenuItemTableViewCell: UITableViewCell {
 
     // MARK: Variables
-    @IBOutlet weak var menuItemTitleLabel: UILabel!
+    @IBOutlet weak var menuItemNameTitleLabel: UILabel!
     @IBOutlet weak var menuItemDescriptionLabel: UILabel!
     @IBOutlet weak var menuItemPriceLabel: UILabel!
 

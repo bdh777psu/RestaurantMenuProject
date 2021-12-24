@@ -172,10 +172,13 @@
 		CD8485D2277496D800B4BEC6 /* Restaurant Menu */ = {
 			isa = PBXGroup;
 			children = (
+				CD8485D5277496D800B4BEC6 /* SceneDelegate.swift */,
+				CD8485D3277496D800B4BEC6 /* AppDelegate.swift */,
 				CDB2A5EF2774B35A00B40B52 /* View */,
 				CDB2A5F02774B35E00B40B52 /* Controller */,
 				CD488C35277576020039CDA9 /* Model */,
 				CD53C33627753E5A006BD1FD /* Service */,
+				CDDCB08C27763FAE001CE9FD /* Extensions */,
 				CDB2A5F12774B37200B40B52 /* Supporting Files */,
 			);
 			path = "Restaurant Menu";
@@ -220,8 +223,6 @@
 		CDB2A5F02774B35E00B40B52 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CD8485D5277496D800B4BEC6 /* SceneDelegate.swift */,
-				CD8485D3277496D800B4BEC6 /* AppDelegate.swift */,
 				CD53BFAD2774BA72006BD1FD /* MainViewController.swift */,
 			);
 			path = Controller;
@@ -236,6 +237,13 @@
 				CDB2A5E62774A1A500B40B52 /* Fonts */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDDCB08C27763FAE001CE9FD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -579,6 +587,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -609,6 +618,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

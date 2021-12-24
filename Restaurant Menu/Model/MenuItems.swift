@@ -16,14 +16,14 @@ struct MenuItems: Codable {
         case pricing
     }
     
-    var price: Float?
+    var price: Double?
     var name: String?
     var descriptionValue: String?
     var pricing: [Pricing]?
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        price = try container.decodeIfPresent(Float.self, forKey: .price)
+        price = try container.decodeIfPresent(Double.self, forKey: .price)
         name = try container.decodeIfPresent(String.self, forKey: .name)
         descriptionValue = try container.decodeIfPresent(String.self, forKey: .descriptionValue)
         pricing = try container.decodeIfPresent([Pricing].self, forKey: .pricing)
