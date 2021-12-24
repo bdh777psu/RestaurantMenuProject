@@ -9,12 +9,12 @@ import UIKit
 
 class MenuItemTableViewCell: UITableViewCell {
 
-    //MARK: Variables
+    // MARK: Variables
     @IBOutlet weak var menuItemTitleLabel: UILabel!
     @IBOutlet weak var menuItemDescriptionLabel: UILabel!
     @IBOutlet weak var menuItemPriceLabel: UILabel!
-    
-    //MARK: - Awake
+
+    // MARK: - Awake
     override func awakeFromNib() {
         super.awakeFromNib()
     }

@@ -99,6 +99,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="lIn-sN-gl4" id="UW6-m7-aef"/>
+                        <outlet property="menuNameLabel" destination="nK6-36-P32" id="fUm-FA-tpl"/>
                         <outlet property="restaurantNameLabel" destination="h6c-bD-mbf" id="txf-Mq-lZ2"/>
                         <outlet property="tableView" destination="ufg-BA-okD" id="bHc-Gg-UbO"/>
                     </connections>

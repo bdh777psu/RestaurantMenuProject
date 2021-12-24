@@ -9,10 +9,10 @@ import UIKit
 
 class MenuSectionCollectionViewCell: UICollectionViewCell {
 
-    //MARK: - Variables
+    // MARK: - Variables
     @IBOutlet weak var menuSectionTitleLabel: UILabel!
 
-    //MARK: - Awake
+    // MARK: - Awake
     override func awakeFromNib() {
         super.awakeFromNib()
     }

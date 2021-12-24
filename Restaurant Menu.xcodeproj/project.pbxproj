@@ -12,7 +12,7 @@
 		CD53BFB42774BED9006BD1FD /* MenuSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD53BFB22774BED9006BD1FD /* MenuSectionCollectionViewCell.xib */; };
 		CD53BFB72774BF5B006BD1FD /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53BFB52774BF5B006BD1FD /* MenuItemTableViewCell.swift */; };
 		CD53BFB82774BF5B006BD1FD /* MenuItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD53BFB62774BF5B006BD1FD /* MenuItemTableViewCell.xib */; };
-		CD53C33527753819006BD1FD /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53C33427753819006BD1FD /* RestaurantService.swift */; };
+		CD53C33527753819006BD1FD /* RestaurantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53C33427753819006BD1FD /* RestaurantManager.swift */; };
 		CD8485D4277496D800B4BEC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8485D3277496D800B4BEC6 /* AppDelegate.swift */; };
 		CD8485D6277496D800B4BEC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8485D5277496D800B4BEC6 /* SceneDelegate.swift */; };
 		CD8485DB277496D800B4BEC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8485D9277496D800B4BEC6 /* Main.storyboard */; };
@@ -23,6 +23,15 @@
 		CD8485F7277496D900B4BEC6 /* Restaurant_MenuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8485F6277496D900B4BEC6 /* Restaurant_MenuUITestsLaunchTests.swift */; };
 		CDB2A5EB2774A26C00B40B52 /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB2A5EA2774A26C00B40B52 /* PlayfairDisplay-Regular.ttf */; };
 		CDB2A5ED2774A4BC00B40B52 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB2A5EC2774A4BC00B40B52 /* Montserrat-Regular.ttf */; };
+		CDCB17682775F68F006D873B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CDCB17672775F68F006D873B /* Alamofire */; };
+		CDCB178C277611FD006D873B /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB1784277611FD006D873B /* Address.swift */; };
+		CDCB178D277611FD006D873B /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB1785277611FD006D873B /* MenuItems.swift */; };
+		CDCB178E277611FD006D873B /* MenuSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB1786277611FD006D873B /* MenuSections.swift */; };
+		CDCB178F277611FD006D873B /* Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB1787277611FD006D873B /* Geo.swift */; };
+		CDCB1790277611FD006D873B /* Pricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB1788277611FD006D873B /* Pricing.swift */; };
+		CDCB1791277611FD006D873B /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB1789277611FD006D873B /* Restaurant.swift */; };
+		CDCB1792277611FD006D873B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB178A277611FD006D873B /* Data.swift */; };
+		CDCB1793277611FD006D873B /* Menus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB178B277611FD006D873B /* Menus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +57,7 @@
 		CD53BFB22774BED9006BD1FD /* MenuSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD53BFB52774BF5B006BD1FD /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		CD53BFB62774BF5B006BD1FD /* MenuItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemTableViewCell.xib; sourceTree = "<group>"; };
-		CD53C33427753819006BD1FD /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
+		CD53C33427753819006BD1FD /* RestaurantManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantManager.swift; sourceTree = "<group>"; };
 		CD8485D0277496D800B4BEC6 /* Restaurant Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Restaurant Menu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8485D3277496D800B4BEC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD8485D5277496D800B4BEC6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +72,14 @@
 		CD8485F6277496D900B4BEC6 /* Restaurant_MenuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant_MenuUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CDB2A5EA2774A26C00B40B52 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		CDB2A5EC2774A4BC00B40B52 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		CDCB1784277611FD006D873B /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		CDCB1785277611FD006D873B /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
+		CDCB1786277611FD006D873B /* MenuSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSections.swift; sourceTree = "<group>"; };
+		CDCB1787277611FD006D873B /* Geo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geo.swift; sourceTree = "<group>"; };
+		CDCB1788277611FD006D873B /* Pricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pricing.swift; sourceTree = "<group>"; };
+		CDCB1789277611FD006D873B /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		CDCB178A277611FD006D873B /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		CDCB178B277611FD006D873B /* Menus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDCB17682775F68F006D873B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +108,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD488C35277576020039CDA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDCB1789277611FD006D873B /* Restaurant.swift */,
+				CDCB178A277611FD006D873B /* Data.swift */,
+				CDCB178B277611FD006D873B /* Menus.swift */,
+				CDCB1786277611FD006D873B /* MenuSections.swift */,
+				CDCB1785277611FD006D873B /* MenuItems.swift */,
+				CDCB1788277611FD006D873B /* Pricing.swift */,
+				CDCB1784277611FD006D873B /* Address.swift */,
+				CDCB1787277611FD006D873B /* Geo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CD53BFAF2774BE87006BD1FD /* Menu Section Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,11 +141,12 @@
 			path = "Menu Item Cell";
 			sourceTree = "<group>";
 		};
-		CD53C33627753E5A006BD1FD /* Model */ = {
+		CD53C33627753E5A006BD1FD /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				CD53C33427753819006BD1FD /* RestaurantManager.swift */,
 			);
-			path = Model;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		CD8485C7277496D800B4BEC6 = {
@@ -140,8 +174,8 @@
 			children = (
 				CDB2A5EF2774B35A00B40B52 /* View */,
 				CDB2A5F02774B35E00B40B52 /* Controller */,
-				CD53C33627753E5A006BD1FD /* Model */,
-				CDB2A5EE2774B34E00B40B52 /* Service */,
+				CD488C35277576020039CDA9 /* Model */,
+				CD53C33627753E5A006BD1FD /* Service */,
 				CDB2A5F12774B37200B40B52 /* Supporting Files */,
 			);
 			path = "Restaurant Menu";
@@ -171,14 +205,6 @@
 				CDB2A5EA2774A26C00B40B52 /* PlayfairDisplay-Regular.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		CDB2A5EE2774B34E00B40B52 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				CD53C33427753819006BD1FD /* RestaurantService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		CDB2A5EF2774B35A00B40B52 /* View */ = {
@@ -229,6 +255,7 @@
 			);
 			name = "Restaurant Menu";
 			packageProductDependencies = (
+				CDCB17672775F68F006D873B /* Alamofire */,
 			);
 			productName = "Restaurant Menu";
 			productReference = CD8485D0277496D800B4BEC6 /* Restaurant Menu.app */;
@@ -303,6 +330,7 @@
 			);
 			mainGroup = CD8485C7277496D800B4BEC6;
 			packageReferences = (
+				CDCB17662775F68F006D873B /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = CD8485D1277496D800B4BEC6 /* Products */;
 			projectDirPath = "";
@@ -352,11 +380,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD53BFAE2774BA72006BD1FD /* MainViewController.swift in Sources */,
-				CD53C33527753819006BD1FD /* RestaurantService.swift in Sources */,
+				CDCB178E277611FD006D873B /* MenuSections.swift in Sources */,
+				CDCB178D277611FD006D873B /* MenuItems.swift in Sources */,
+				CD53C33527753819006BD1FD /* RestaurantManager.swift in Sources */,
+				CDCB1790277611FD006D873B /* Pricing.swift in Sources */,
 				CD8485D4277496D800B4BEC6 /* AppDelegate.swift in Sources */,
 				CD8485D6277496D800B4BEC6 /* SceneDelegate.swift in Sources */,
 				CD53BFB32774BED9006BD1FD /* MenuSectionCollectionViewCell.swift in Sources */,
+				CDCB1792277611FD006D873B /* Data.swift in Sources */,
+				CDCB1791277611FD006D873B /* Restaurant.swift in Sources */,
+				CDCB1793277611FD006D873B /* Menus.swift in Sources */,
 				CD53BFB72774BF5B006BD1FD /* MenuItemTableViewCell.swift in Sources */,
+				CDCB178C277611FD006D873B /* Address.swift in Sources */,
+				CDCB178F277611FD006D873B /* Geo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +567,7 @@
 		CD8485FB277496D900B4BEC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -560,6 +597,7 @@
 		CD8485FC277496D900B4BEC6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -589,7 +627,7 @@
 		CD8485FE277496D900B4BEC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -609,7 +647,7 @@
 		CD8485FF277496D900B4BEC6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -629,7 +667,7 @@
 		CD848601277496D900B4BEC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3X5PNF8SNP;
@@ -647,7 +685,7 @@
 		CD848602277496D900B4BEC6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3X5PNF8SNP;
@@ -702,6 +740,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CDCB17662775F68F006D873B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CDCB17672775F68F006D873B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDCB17662775F68F006D873B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CD8485C8277496D800B4BEC6 /* Project object */;
 }
