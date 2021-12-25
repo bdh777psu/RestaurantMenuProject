@@ -87,9 +87,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
         if indexPath.row == selectedSectionIndexPath.item {
             cell.isSelected = true
+            cell.menuSectionTitleLabel.textColor = UIColor(named: "ItemTitleGrey")
             cell.selectedSeparatorView.isHidden = false
         } else {
             cell.isSelected = false
+            cell.menuSectionTitleLabel.textColor = UIColor(named: "DarkerGrey")
             cell.selectedSeparatorView.isHidden = true
         }
         
@@ -102,6 +104,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         self.selectedSectionIndexPath = indexPath
 
         if let cell = collectionView.cellForItem(at: indexPath) as? MenuSectionCollectionViewCell {
+            cell.menuSectionTitleLabel.textColor = UIColor(named: "ItemTitleGrey")
             cell.selectedSeparatorView.isHidden = false
         }
         
@@ -112,6 +115,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? MenuSectionCollectionViewCell {
+            cell.menuSectionTitleLabel.textColor = UIColor(named: "DarkerGrey")
             cell.selectedSeparatorView.isHidden = true
         }
         

@@ -22,5 +22,6 @@ class MenuSectionCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() -> Void {
         selectedSeparatorView.isHidden = true
+        menuSectionTitleLabel.textColor = UIColor(named: "Darker Grey")
     }
 }
