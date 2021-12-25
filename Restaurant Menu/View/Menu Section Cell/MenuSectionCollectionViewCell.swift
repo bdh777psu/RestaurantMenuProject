@@ -13,7 +13,7 @@ class MenuSectionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var menuSectionTitleLabel: UILabel!
     @IBOutlet weak var selectedSeparatorView: UIView!
     
-    // MARK: - Awake
+    // MARK: - Cell Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
