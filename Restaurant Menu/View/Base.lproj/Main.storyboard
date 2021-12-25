@@ -22,6 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="GiG-YO-1yh">
+                                <rect key="frame" x="204" y="453" width="20" height="20"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQ3-Uc-lCu" userLabel="Restaurant Name Container View">
                                 <rect key="frame" x="0.0" y="44" width="428" height="128"/>
                                 <subviews>
@@ -45,9 +48,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYc-wJ-zw2" userLabel="Menu Title Container View">
                                 <rect key="frame" x="30" y="172" width="368" height="151"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="GiG-YO-1yh">
-                                        <rect key="frame" x="174" y="65.666666666666657" width="20" height="20"/>
-                                    </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nK6-36-P32" userLabel="Menu Title">
                                         <rect key="frame" x="184" y="75" width="0.0" height="33"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="26"/>
@@ -61,8 +61,6 @@
                                     <constraint firstAttribute="height" constant="151" id="3Aj-cD-h70"/>
                                     <constraint firstItem="nK6-36-P32" firstAttribute="top" secondItem="fYc-wJ-zw2" secondAttribute="top" constant="75" id="Sl5-Jt-UvB"/>
                                     <constraint firstItem="nK6-36-P32" firstAttribute="centerX" secondItem="fYc-wJ-zw2" secondAttribute="centerX" id="kE4-lX-ptT"/>
-                                    <constraint firstItem="GiG-YO-1yh" firstAttribute="centerY" secondItem="fYc-wJ-zw2" secondAttribute="centerY" id="tbs-Na-qxK"/>
-                                    <constraint firstItem="GiG-YO-1yh" firstAttribute="centerX" secondItem="fYc-wJ-zw2" secondAttribute="centerX" id="u8u-bQ-Zzt"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lIn-sN-gl4">
@@ -92,7 +90,9 @@
                             <constraint firstItem="lIn-sN-gl4" firstAttribute="top" secondItem="fYc-wJ-zw2" secondAttribute="bottom" id="Fau-Ah-SIo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lIn-sN-gl4" secondAttribute="trailing" constant="30" id="HhE-WY-7fw"/>
                             <constraint firstItem="fYc-wJ-zw2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="IL0-el-fRe"/>
+                            <constraint firstItem="GiG-YO-1yh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ke4-Zf-0DL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fYc-wJ-zw2" secondAttribute="trailing" constant="30" id="LMl-gP-eE0"/>
+                            <constraint firstItem="GiG-YO-1yh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NXx-sC-Al0"/>
                             <constraint firstItem="yQ3-Uc-lCu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c7p-7W-R5T"/>
                             <constraint firstItem="lIn-sN-gl4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="dfn-ki-aUL"/>
                             <constraint firstItem="fYc-wJ-zw2" firstAttribute="top" secondItem="yQ3-Uc-lCu" secondAttribute="bottom" id="fTB-3t-L9W"/>

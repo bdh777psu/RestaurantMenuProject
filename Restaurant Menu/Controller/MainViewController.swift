@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 
 class MainViewController: UIViewController {
 
@@ -23,7 +22,7 @@ class MainViewController: UIViewController {
     private var restaurantService = RestaurantManager()
     private var menu: Menus?
     
-    private var selectedSectionIndexPath: IndexPath = IndexPath(item: 1, section: 0)
+    private var selectedMenuSectionIndexPath: IndexPath = IndexPath(item: 1, section: 0)
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -85,7 +84,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuSectionCell", for: indexPath) as! MenuSectionCollectionViewCell
 
-        if indexPath.row == selectedSectionIndexPath.item {
+        if indexPath.row == selectedMenuSectionIndexPath.item {
             cell.isSelected = true
             cell.menuSectionTitleLabel.textColor = UIColor(named: "ItemTitleGrey")
             cell.selectedSeparatorView.isHidden = false
@@ -101,7 +100,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.selectedSectionIndexPath = indexPath
+        self.selectedMenuSectionIndexPath = indexPath
 
         if let cell = collectionView.cellForItem(at: indexPath) as? MenuSectionCollectionViewCell {
             cell.menuSectionTitleLabel.textColor = UIColor(named: "ItemTitleGrey")
@@ -127,13 +126,13 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return menu?.menuSections?[self.selectedSectionIndexPath.row].menuItems?.count ?? 0
+        return menu?.menuSections?[self.selectedMenuSectionIndexPath.row].menuItems?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath) as! MenuItemTableViewCell
         
-        let item = menu?.menuSections?[self.selectedSectionIndexPath.row].menuItems?[indexPath.row]
+        let item = menu?.menuSections?[self.selectedMenuSectionIndexPath.row].menuItems?[indexPath.row]
         
         cell.menuItemNameTitleLabel.text = item?.name
         
@@ -162,7 +161,7 @@ extension MainViewController: RestaurantServiceDelegate {
         DispatchQueue.main.async {
             self.restaurantNameLabel.text = restaurantModel.data?.first?.restaurantName
             self.menuNameLabel.text = self.menu?.menuName
-            self.menuSectionCollectionView.selectItem(at: self.selectedSectionIndexPath, animated: false, scrollPosition: .centeredHorizontally)
+            self.menuSectionCollectionView.selectItem(at: self.selectedMenuSectionIndexPath, animated: false, scrollPosition: .centeredHorizontally)
         }
         
         self.activityIndicatorView.stopAnimating()
