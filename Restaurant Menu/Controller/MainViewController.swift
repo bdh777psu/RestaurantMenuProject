@@ -11,7 +11,6 @@ import SwiftUI
 class MainViewController: UIViewController {
 
     // MARK: - Outlets
-    
     @IBOutlet weak var restaurantNameContainerView: UIView!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var menuNameLabel: UILabel!
@@ -22,7 +21,6 @@ class MainViewController: UIViewController {
 
     // MARK: - Variables
     private var restaurantService = RestaurantManager()
-    private var restaurant: Restaurant?
     private var menu: Menus?
     
     private var selectedSectionIndexPath: IndexPath = IndexPath(item: 1, section: 0)
@@ -78,6 +76,7 @@ class MainViewController: UIViewController {
     }
 }
 
+//MARK: - CollectionView Delegate & Datasource
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menu?.menuSections?.count ?? 0
@@ -124,6 +123,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
+//MARK: - TableView Delegate & Datasource
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -154,13 +154,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//MARK: - Web Service Delegate
 extension MainViewController: RestaurantServiceDelegate {
     func didUpdateRestaurant(_ restaurantModel: Restaurant) {
-        self.restaurant = restaurantModel
-        self.menu = restaurant?.data?.first?.menus?.first
+        self.menu = restaurantModel.data?.first?.menus?.first
 
         DispatchQueue.main.async {
-            self.restaurantNameLabel.text = self.restaurant?.data?.first?.restaurantName
+            self.restaurantNameLabel.text = restaurantModel.data?.first?.restaurantName
             self.menuNameLabel.text = self.menu?.menuName
             self.menuSectionCollectionView.selectItem(at: self.selectedSectionIndexPath, animated: false, scrollPosition: .centeredHorizontally)
         }
