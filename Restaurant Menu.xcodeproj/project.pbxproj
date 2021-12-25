@@ -21,6 +21,7 @@
 		CD8485EB277496D900B4BEC6 /* Restaurant_MenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8485EA277496D900B4BEC6 /* Restaurant_MenuTests.swift */; };
 		CD8485F5277496D900B4BEC6 /* Restaurant_MenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8485F4277496D900B4BEC6 /* Restaurant_MenuUITests.swift */; };
 		CD8485F7277496D900B4BEC6 /* Restaurant_MenuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8485F6277496D900B4BEC6 /* Restaurant_MenuUITestsLaunchTests.swift */; };
+		CDADA47727770CB9009C0790 /* UIView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADA47627770CB9009C0790 /* UIView+Borders.swift */; };
 		CDB2A5EB2774A26C00B40B52 /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB2A5EA2774A26C00B40B52 /* PlayfairDisplay-Regular.ttf */; };
 		CDB2A5ED2774A4BC00B40B52 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB2A5EC2774A4BC00B40B52 /* Montserrat-Regular.ttf */; };
 		CDCB17682775F68F006D873B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CDCB17672775F68F006D873B /* Alamofire */; };
@@ -70,6 +71,7 @@
 		CD8485F0277496D900B4BEC6 /* Restaurant MenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Restaurant MenuUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8485F4277496D900B4BEC6 /* Restaurant_MenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant_MenuUITests.swift; sourceTree = "<group>"; };
 		CD8485F6277496D900B4BEC6 /* Restaurant_MenuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant_MenuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CDADA47627770CB9009C0790 /* UIView+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Borders.swift"; sourceTree = "<group>"; };
 		CDB2A5EA2774A26C00B40B52 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		CDB2A5EC2774A4BC00B40B52 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		CDCB1784277611FD006D873B /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		CDDCB08C27763FAE001CE9FD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CDADA47627770CB9009C0790 /* UIView+Borders.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				CD53BFB72774BF5B006BD1FD /* MenuItemTableViewCell.swift in Sources */,
 				CDCB178C277611FD006D873B /* Address.swift in Sources */,
 				CDCB178F277611FD006D873B /* Geo.swift in Sources */,
+				CDADA47727770CB9009C0790 /* UIView+Borders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

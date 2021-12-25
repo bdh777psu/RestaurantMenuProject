@@ -40,11 +40,18 @@ class MainViewController: UIViewController {
         performFetchRequest()
     }
     
+    override func viewWillLayoutSubviews() {
+        let contentWidth = menuSectionCollectionView.contentSize.width
+        
+        menuSectionCollectionView.addTopBorder(with: UIColor(named: "DarkerGrey"), withWidth: contentWidth , andBorderWidth: 1.0)
+        menuSectionCollectionView.addBottomBorder(with: UIColor(named: "DarkerGrey"), withWidth: contentWidth , andBorderWidth: 1.0)
+    }
+    
     func setupRestaurantNameContainerView() {
         restaurantNameContainerView.layer.borderWidth = 1.0
         restaurantNameContainerView.layer.borderColor = UIColor(named: "DarkerGrey")?.cgColor
     }
-
+    
     func setupCollectionView() {
         menuSectionCollectionView.delegate = self
         menuSectionCollectionView.dataSource = self
@@ -143,6 +150,8 @@ extension MainViewController: RestaurantServiceDelegate {
         }
         
         self.menuSectionCollectionView.reloadData()
+        self.menuSectionCollectionView.layoutSubviews()
+        
         self.menuItemTableView.reloadData()
     }
 
