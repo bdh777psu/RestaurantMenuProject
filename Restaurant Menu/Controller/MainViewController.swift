@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var restaurantSelectionButton: UIButton!
+    @IBOutlet weak var restaurantPickerView: UIPickerView!
     @IBOutlet weak var menuNameLabel: UILabel!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
@@ -20,10 +21,9 @@ class MainViewController: UIViewController {
 
     // MARK: - Variables
     private var restaurantService = RestaurantManager()
-    private var restaurant: [Data]?
+    private var restaurant: Restaurant?
     private var menu: Menus?
     
-    private var restaurantList: RestaurantListTableViewController?
     private var selectedMenuSectionIndexPath: IndexPath = IndexPath(item: 1, section: 0)
     
     var selectedRestaurantIndex: Int = 0
@@ -38,6 +38,7 @@ class MainViewController: UIViewController {
         setupLocationManager()
         
         setupRestaurantSelectionButton()
+        setupRestaurantPickerView()
         
         setupCollectionView()
         setupTableView()
@@ -71,7 +72,14 @@ class MainViewController: UIViewController {
     func setupRestaurantSelectionButton() {
         restaurantSelectionButton.layer.borderWidth = 1.0
         restaurantSelectionButton.layer.borderColor = UIColor(named: "DarkerGrey")?.cgColor
-            }
+    }
+    
+    func setupRestaurantPickerView() {
+        restaurantPickerView.delegate = self
+        restaurantPickerView.dataSource = self
+        
+        restaurantPickerView.isHidden = true
+    }
     
     func setupCollectionView() {
         menuSectionCollectionView.delegate = self
@@ -94,18 +102,14 @@ class MainViewController: UIViewController {
     }
 
     func performFetchRequest() {
+        activityIndicatorView.startAnimating()
+        
         restaurantService.fetchRestaurantData(lat: location?.latitude.description ?? "42.361145", lon: location?.longitude.description ?? "-71.057083")
     }
     
     //MARK: Actions
     @IBAction func restaurantSelectionButtonClicked(_ sender: UIButton) {
-        performSegue(withIdentifier: "RestaurantList", sender: sender)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let restaurantListTableViewController = segue.destination as? RestaurantListTableViewController {
-            restaurantListTableViewController.restaurant = self.restaurant
-        }
+        restaurantPickerView.isHidden = false
     }
 }
 
@@ -118,6 +122,29 @@ extension MainViewController: CLLocationManagerDelegate {
         
         locationManager.stopUpdatingLocation()
         locationManager.delegate = nil
+    }
+}
+
+//MARK: - PickerView Delegate & Datasource
+extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        restaurant?.data?.count ?? 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return restaurant?.data?[row].restaurantName
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        restaurantPickerView.isHidden = true
+        
+        self.selectedRestaurantIndex = row
+        
+        performFetchRequest()
     }
 }
 
@@ -202,7 +229,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - Web Service Delegate
 extension MainViewController: RestaurantServiceDelegate {
     func didUpdateRestaurant(_ restaurantModel: Restaurant) {
-        self.restaurant = restaurantModel.data
+        self.restaurant = restaurantModel
         self.menu = restaurantModel.data?[selectedRestaurantIndex].menus?.first
 
         updateUI()
@@ -215,6 +242,7 @@ extension MainViewController: RestaurantServiceDelegate {
         self.menuSectionCollectionView.selectItem(at: self.selectedMenuSectionIndexPath, animated: false, scrollPosition: .centeredHorizontally)
         
         self.menuItemTableView.reloadData()
+        self.restaurantPickerView.reloadAllComponents()
     }
 
     func didFailWithError(_ error: Error) {
@@ -223,7 +251,8 @@ extension MainViewController: RestaurantServiceDelegate {
     
     fileprivate func updateUI() {
         DispatchQueue.main.async {
-            self.restaurantSelectionButton.setTitle(self.restaurant?[self.selectedRestaurantIndex].restaurantName, for: .normal)
+            let restaurantName = self.restaurant?.data?[self.selectedRestaurantIndex].restaurantName
+            self.restaurantSelectionButton.setTitle(restaurantName, for: .normal)
             
             self.menuNameLabel.text = self.menu?.menuName
         }
