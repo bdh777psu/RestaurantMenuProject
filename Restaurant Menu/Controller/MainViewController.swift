@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
     private var restaurant: Restaurant?
     private var menu: Menus?
     
+    let regularExpression = "[\\[\\],+]"
     private var selectedSectionIndexPath: IndexPath = IndexPath(item: 1, section: 0)
 
     // MARK: - View Lifecycle
@@ -134,9 +135,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath) as! MenuItemTableViewCell
         
         let item = menu?.menuSections?[self.selectedSectionIndexPath.row].menuItems?[indexPath.row]
-
         cell.menuItemNameTitleLabel.text = item?.name
-        cell.menuItemDescriptionLabel.text = item?.descriptionValue?.replacingOccurrences(of: "[\\[\\],+]", with: " /", options: .regularExpression, range: nil)
+        
+        let itemDescriptionValue = item?.descriptionValue
+        let itemDescription = itemDescriptionValue?.replacingOccurrences(of: self.regularExpression, with: " /", options: .regularExpression, range: nil)
+        cell.menuItemDescriptionLabel.text = itemDescription
+        
         cell.menuItemPriceLabel.text = "$ " + (item?.price?.description ?? "Please consult")
         
         return cell
