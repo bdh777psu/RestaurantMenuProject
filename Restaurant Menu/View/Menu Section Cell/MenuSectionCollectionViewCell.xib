@@ -23,7 +23,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMALL PLATES" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyq-GT-d0l" userLabel="Menu Section Title">
-                        <rect key="frame" x="4.5" y="35.5" width="291" height="29.5"/>
+                        <rect key="frame" x="16" y="35.5" width="268" height="29.5"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                         <color key="textColor" name="DarkerGrey"/>
                         <nil key="highlightedColor"/>
@@ -38,10 +38,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="eOc-WG-uF6" secondAttribute="bottom" constant="-2" id="HPi-gs-PxI"/>
-                    <constraint firstItem="Eyq-GT-d0l" firstAttribute="leading" secondItem="k6V-Im-OEu" secondAttribute="leading" constant="4.6666666666666714" id="J1O-XI-tqY"/>
                     <constraint firstAttribute="trailing" secondItem="eOc-WG-uF6" secondAttribute="trailing" id="Wd6-V7-RhN"/>
                     <constraint firstItem="Eyq-GT-d0l" firstAttribute="centerY" secondItem="k6V-Im-OEu" secondAttribute="centerY" id="e6u-0V-cGs"/>
-                    <constraint firstAttribute="trailing" secondItem="Eyq-GT-d0l" secondAttribute="trailing" constant="4.5" id="n3U-VI-itP"/>
+                    <constraint firstItem="Eyq-GT-d0l" firstAttribute="leading" secondItem="k6V-Im-OEu" secondAttribute="leadingMargin" id="iFu-se-ofa"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Eyq-GT-d0l" secondAttribute="trailing" id="uMG-QW-y4d"/>
                     <constraint firstItem="eOc-WG-uF6" firstAttribute="leading" secondItem="k6V-Im-OEu" secondAttribute="leading" id="w6x-eK-bBF"/>
                 </constraints>
             </collectionViewCellContentView>

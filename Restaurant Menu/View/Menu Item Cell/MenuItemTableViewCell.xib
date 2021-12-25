@@ -26,6 +26,9 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pear Salad" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RR-bF-J5k" userLabel="Item Title">
                         <rect key="frame" x="20" y="55" width="388" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="nfx-bk-om3"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="48"/>
                         <color key="textColor" name="ItemTitleGrey"/>
                         <nil key="highlightedColor"/>
@@ -38,6 +41,9 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 11.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbb-eb-kpx">
                         <rect key="frame" x="180.5" y="329" width="67" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="OQB-bp-ZCE"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="22"/>
                         <color key="textColor" name="ItemDescriptionGrey"/>
                         <nil key="highlightedColor"/>
