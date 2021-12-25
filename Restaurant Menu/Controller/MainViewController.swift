@@ -15,7 +15,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var restaurantNameContainerView: UIView!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var menuNameLabel: UILabel!
-
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
     @IBOutlet weak var menuSectionCollectionView: UICollectionView!
     @IBOutlet weak var menuItemTableView: UITableView!
 
@@ -152,6 +153,8 @@ extension MainViewController: RestaurantServiceDelegate {
             self.menuNameLabel.text = self.menu?.menuName
             self.menuSectionCollectionView.selectItem(at: self.selectedSectionIndexPath, animated: false, scrollPosition: .centeredHorizontally)
         }
+        
+        self.activityIndicatorView.stopAnimating()
         
         self.menuSectionCollectionView.reloadData()
         self.menuSectionCollectionView.layoutSubviews()

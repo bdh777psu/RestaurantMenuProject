@@ -25,8 +25,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQ3-Uc-lCu" userLabel="Restaurant Name Container View">
                                 <rect key="frame" x="0.0" y="44" width="428" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTAURANT NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6c-bD-mbf" userLabel="Restaurant Name">
-                                        <rect key="frame" x="80.333333333333343" y="69" width="267.33333333333326" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6c-bD-mbf" userLabel="Restaurant Name">
+                                        <rect key="frame" x="214" y="69" width="0.0" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="DG5-e2-qQ2"/>
                                         </constraints>
@@ -45,8 +45,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYc-wJ-zw2" userLabel="Menu Title Container View">
                                 <rect key="frame" x="30" y="172" width="368" height="151"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MENU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nK6-36-P32" userLabel="Menu Title">
-                                        <rect key="frame" x="142" y="75" width="84" height="33"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="GiG-YO-1yh">
+                                        <rect key="frame" x="174" y="65.666666666666657" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nK6-36-P32" userLabel="Menu Title">
+                                        <rect key="frame" x="184" y="75" width="0.0" height="33"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="26"/>
                                         <color key="textColor" name="MenuTitleGrey"/>
                                         <nil key="highlightedColor"/>
@@ -58,6 +61,8 @@
                                     <constraint firstAttribute="height" constant="151" id="3Aj-cD-h70"/>
                                     <constraint firstItem="nK6-36-P32" firstAttribute="top" secondItem="fYc-wJ-zw2" secondAttribute="top" constant="75" id="Sl5-Jt-UvB"/>
                                     <constraint firstItem="nK6-36-P32" firstAttribute="centerX" secondItem="fYc-wJ-zw2" secondAttribute="centerX" id="kE4-lX-ptT"/>
+                                    <constraint firstItem="GiG-YO-1yh" firstAttribute="centerY" secondItem="fYc-wJ-zw2" secondAttribute="centerY" id="tbs-Na-qxK"/>
+                                    <constraint firstItem="GiG-YO-1yh" firstAttribute="centerX" secondItem="fYc-wJ-zw2" secondAttribute="centerX" id="u8u-bQ-Zzt"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lIn-sN-gl4">
@@ -99,6 +104,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="GiG-YO-1yh" id="lQq-bu-jrX"/>
                         <outlet property="menuItemTableView" destination="ufg-BA-okD" id="bHc-Gg-UbO"/>
                         <outlet property="menuNameLabel" destination="nK6-36-P32" id="fUm-FA-tpl"/>
                         <outlet property="menuSectionCollectionView" destination="lIn-sN-gl4" id="UW6-m7-aef"/>
