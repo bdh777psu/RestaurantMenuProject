@@ -5,13 +5,13 @@
 //  Created by Diogo Lessa on 23/12/21.
 //
 
+import CoreLocation
 import UIKit
 
 class MainViewController: UIViewController {
 
     // MARK: - Outlets
-    @IBOutlet weak var restaurantNameContainerView: UIView!
-    @IBOutlet weak var restaurantNameLabel: UILabel!
+    @IBOutlet weak var restaurantSelectionButton: UIButton!
     @IBOutlet weak var menuNameLabel: UILabel!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
@@ -20,21 +20,34 @@ class MainViewController: UIViewController {
 
     // MARK: - Variables
     private var restaurantService = RestaurantManager()
+    private var restaurant: [Data]?
     private var menu: Menus?
     
+    private var restaurantList: RestaurantListTableViewController?
     private var selectedMenuSectionIndexPath: IndexPath = IndexPath(item: 1, section: 0)
+    
+    var selectedRestaurantIndex: Int = 0
+    
+    let locationManager = CLLocationManager()
+    var location: CLLocationCoordinate2D?
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupRestaurantNameContainerView()
+        setupLocationManager()
+        
+        setupRestaurantSelectionButton()
         
         setupCollectionView()
         setupTableView()
 
         setupRestaurantServiceDelegate()
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         performFetchRequest()
     }
     
@@ -45,10 +58,20 @@ class MainViewController: UIViewController {
         menuSectionCollectionView.addBottomBorder(with: UIColor(named: "DarkerGrey"), withWidth: contentWidth , andBorderWidth: 1.0)
     }
     
-    func setupRestaurantNameContainerView() {
-        restaurantNameContainerView.layer.borderWidth = 1.0
-        restaurantNameContainerView.layer.borderColor = UIColor(named: "DarkerGrey")?.cgColor
+    func setupLocationManager() {
+        locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
     }
+
+    func setupRestaurantSelectionButton() {
+        restaurantSelectionButton.layer.borderWidth = 1.0
+        restaurantSelectionButton.layer.borderColor = UIColor(named: "DarkerGrey")?.cgColor
+            }
     
     func setupCollectionView() {
         menuSectionCollectionView.delegate = self
@@ -71,7 +94,30 @@ class MainViewController: UIViewController {
     }
 
     func performFetchRequest() {
-        restaurantService.fetchRestaurantData(lat: "42.361145", lon: "-71.057083")
+        restaurantService.fetchRestaurantData(lat: location?.latitude.description ?? "42.361145", lon: location?.longitude.description ?? "-71.057083")
+    }
+    
+    //MARK: Actions
+    @IBAction func restaurantSelectionButtonClicked(_ sender: UIButton) {
+        performSegue(withIdentifier: "RestaurantList", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let restaurantListTableViewController = segue.destination as? RestaurantListTableViewController {
+            restaurantListTableViewController.restaurant = self.restaurant
+        }
+    }
+}
+
+//MARK: - LocationManager Delegate
+extension MainViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        
+        self.location = location
+        
+        locationManager.stopUpdatingLocation()
+        locationManager.delegate = nil
     }
 }
 
@@ -156,23 +202,30 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - Web Service Delegate
 extension MainViewController: RestaurantServiceDelegate {
     func didUpdateRestaurant(_ restaurantModel: Restaurant) {
-        self.menu = restaurantModel.data?.first?.menus?.first
+        self.restaurant = restaurantModel.data
+        self.menu = restaurantModel.data?[selectedRestaurantIndex].menus?.first
 
-        DispatchQueue.main.async {
-            self.restaurantNameLabel.text = restaurantModel.data?.first?.restaurantName
-            self.menuNameLabel.text = self.menu?.menuName
-            self.menuSectionCollectionView.selectItem(at: self.selectedMenuSectionIndexPath, animated: false, scrollPosition: .centeredHorizontally)
-        }
+        updateUI()
         
         self.activityIndicatorView.stopAnimating()
-        
+
         self.menuSectionCollectionView.reloadData()
         self.menuSectionCollectionView.layoutSubviews()
+        
+        self.menuSectionCollectionView.selectItem(at: self.selectedMenuSectionIndexPath, animated: false, scrollPosition: .centeredHorizontally)
         
         self.menuItemTableView.reloadData()
     }
 
     func didFailWithError(_ error: Error) {
         print(error)
+    }
+    
+    fileprivate func updateUI() {
+        DispatchQueue.main.async {
+            self.restaurantSelectionButton.setTitle(self.restaurant?[self.selectedRestaurantIndex].restaurantName, for: .normal)
+            
+            self.menuNameLabel.text = self.menu?.menuName
+        }
     }
 }

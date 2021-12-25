@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD338E0A27777E56003BE932 /* RestaurantListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD338E0927777E56003BE932 /* RestaurantListTableViewController.swift */; };
 		CD53BFAE2774BA72006BD1FD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53BFAD2774BA72006BD1FD /* MainViewController.swift */; };
 		CD53BFB32774BED9006BD1FD /* MenuSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53BFB12774BED9006BD1FD /* MenuSectionCollectionViewCell.swift */; };
 		CD53BFB42774BED9006BD1FD /* MenuSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD53BFB22774BED9006BD1FD /* MenuSectionCollectionViewCell.xib */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD338E0927777E56003BE932 /* RestaurantListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListTableViewController.swift; sourceTree = "<group>"; };
 		CD53BFAD2774BA72006BD1FD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CD53BFB12774BED9006BD1FD /* MenuSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD53BFB22774BED9006BD1FD /* MenuSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuSectionCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				CD53BFAD2774BA72006BD1FD /* MainViewController.swift */,
+				CD338E0927777E56003BE932 /* RestaurantListTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				CD53BFB72774BF5B006BD1FD /* MenuItemTableViewCell.swift in Sources */,
 				CDCB178C277611FD006D873B /* Address.swift in Sources */,
 				CDCB178F277611FD006D873B /* Geo.swift in Sources */,
+				CD338E0A27777E56003BE932 /* RestaurantListTableViewController.swift in Sources */,
 				CDADA47727770CB9009C0790 /* UIView+Borders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +592,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Restaurant Menu/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Restaurants;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location data is needed to find nearby restaurants";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -619,6 +624,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Restaurant Menu/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Restaurants;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location data is needed to find nearby restaurants";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
