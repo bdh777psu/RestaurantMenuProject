@@ -125,24 +125,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		CD53BFAF2774BE87006BD1FD /* Menu Section Cell */ = {
-			isa = PBXGroup;
-			children = (
-				CD53BFB22774BED9006BD1FD /* MenuSectionCollectionViewCell.xib */,
-				CD53BFB12774BED9006BD1FD /* MenuSectionCollectionViewCell.swift */,
-			);
-			path = "Menu Section Cell";
-			sourceTree = "<group>";
-		};
-		CD53BFB02774BEA3006BD1FD /* Menu Item Cell */ = {
-			isa = PBXGroup;
-			children = (
-				CD53BFB62774BF5B006BD1FD /* MenuItemTableViewCell.xib */,
-				CD53BFB52774BF5B006BD1FD /* MenuItemTableViewCell.swift */,
-			);
-			path = "Menu Item Cell";
-			sourceTree = "<group>";
-		};
 		CD53C33627753E5A006BD1FD /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,8 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				CD8485D9277496D800B4BEC6 /* Main.storyboard */,
-				CD53BFAF2774BE87006BD1FD /* Menu Section Cell */,
-				CD53BFB02774BEA3006BD1FD /* Menu Item Cell */,
+				CD53BFB22774BED9006BD1FD /* MenuSectionCollectionViewCell.xib */,
+				CD53BFB62774BF5B006BD1FD /* MenuItemTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				CD53BFAD2774BA72006BD1FD /* MainViewController.swift */,
+				CD53BFB12774BED9006BD1FD /* MenuSectionCollectionViewCell.swift */,
+				CD53BFB52774BF5B006BD1FD /* MenuItemTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
