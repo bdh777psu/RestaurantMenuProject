@@ -53,12 +53,17 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
         let contentWidth = menuSectionCollectionView.contentSize.width
         
         menuSectionCollectionView.addTopBorder(with: UIColor(named: "DarkerGrey"), withWidth: contentWidth , andBorderWidth: 1.0)
         menuSectionCollectionView.addBottomBorder(with: UIColor(named: "DarkerGrey"), withWidth: contentWidth , andBorderWidth: 1.0)
+        
+        menuSectionCollectionView.collectionViewLayout.invalidateLayout()
     }
     
+    //MARK: Setups
     func setupLocationManager() {
         locationManager.requestWhenInUseAuthorization()
 
@@ -97,6 +102,7 @@ class MainViewController: UIViewController {
         menuItemTableView.register(nib, forCellReuseIdentifier: "MenuItemCell")
     }
 
+    //MARK: Networking
     func setupRestaurantServiceDelegate() {
         restaurantService.delegate = self
     }
@@ -107,7 +113,7 @@ class MainViewController: UIViewController {
         restaurantService.fetchRestaurantData(lat: location?.latitude.description ?? "42.361145", lon: location?.longitude.description ?? "-71.057083")
     }
     
-    //MARK: Actions
+    //MARK: - Actions
     @IBAction func restaurantSelectionButtonClicked(_ sender: UIButton) {
         restaurantPickerView.isHidden = false
     }
@@ -149,7 +155,7 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 //MARK: - CollectionView Delegate & Datasource
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menu?.menuSections?.count ?? 0
     }
@@ -236,13 +242,14 @@ extension MainViewController: RestaurantServiceDelegate {
         
         self.activityIndicatorView.stopAnimating()
 
+        self.restaurantPickerView.reloadAllComponents()
+
         self.menuSectionCollectionView.reloadData()
         self.menuSectionCollectionView.layoutSubviews()
         
         self.menuSectionCollectionView.selectItem(at: self.selectedMenuSectionIndexPath, animated: false, scrollPosition: .centeredHorizontally)
         
         self.menuItemTableView.reloadData()
-        self.restaurantPickerView.reloadAllComponents()
     }
 
     func didFailWithError(_ error: Error) {

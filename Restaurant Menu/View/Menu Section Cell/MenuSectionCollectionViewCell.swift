@@ -16,8 +16,6 @@ class MenuSectionCollectionViewCell: UICollectionViewCell {
     // MARK: - Cell Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        selectedSeparatorView.isHidden = true
     }
     
     override func prepareForReuse() -> Void {
