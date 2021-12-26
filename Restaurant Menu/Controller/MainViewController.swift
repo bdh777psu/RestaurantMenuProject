@@ -22,7 +22,6 @@ class MainViewController: UIViewController {
     // MARK: - Variables
     private var restaurantService = RestaurantManager()
     private var restaurant: Restaurant?
-    private var menu: Menus?
     
     private var selectedMenuSectionIndexPath: IndexPath = IndexPath(item: 1, section: 0)
     
@@ -161,7 +160,8 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 //MARK: - CollectionView Delegate & Datasource
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menu?.menuSections?.count ?? 0
+        let menuSections = self.restaurant?.data?[self.selectedRestaurantIndex].menus?.first?.menuSections
+        return menuSections?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -177,7 +177,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.selectedSeparatorView.isHidden = true
         }
         
-        cell.menuSectionTitleLabel.text = menu?.menuSections?[indexPath.row].sectionName?.uppercased()
+        let sectionName = self.restaurant?.data?[self.selectedRestaurantIndex].menus?.first?.menuSections?[indexPath.row].sectionName
+        cell.menuSectionTitleLabel.text = sectionName?.uppercased()
         
         return cell
     }
@@ -209,14 +210,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //MARK: - TableView Delegate & Datasource
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return menu?.menuSections?[self.selectedMenuSectionIndexPath.row].menuItems?.count ?? 0
+        let menuItems = self.restaurant?.data?[self.selectedRestaurantIndex].menus?.first?.menuSections?[self.selectedMenuSectionIndexPath.row].menuItems
+        return menuItems?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath) as! MenuItemTableViewCell
         
-        let item = menu?.menuSections?[self.selectedMenuSectionIndexPath.row].menuItems?[indexPath.row]
+        let item =  self.restaurant?.data?[self.selectedRestaurantIndex].menus?.first?.menuSections?[self.selectedMenuSectionIndexPath.row].menuItems?[indexPath.row]
         
         cell.menuItemNameTitleLabel.text = item?.name
         
@@ -241,7 +242,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 extension MainViewController: RestaurantServiceDelegate {
     func didUpdateRestaurant(_ restaurantModel: Restaurant) {
         self.restaurant = restaurantModel
-        self.menu = restaurantModel.data?[selectedRestaurantIndex].menus?.first
 
         updateUI()
         
@@ -252,9 +252,9 @@ extension MainViewController: RestaurantServiceDelegate {
         self.menuSectionCollectionView.reloadData()
         self.menuSectionCollectionView.layoutSubviews()
         
-        self.menuSectionCollectionView.selectItem(at: self.selectedMenuSectionIndexPath, animated: false, scrollPosition: .centeredHorizontally)
-        
         self.menuItemTableView.reloadData()
+        
+        self.menuSectionCollectionView.selectItem(at: self.selectedMenuSectionIndexPath, animated: false, scrollPosition: .centeredHorizontally)
     }
 
     func didFailWithError(_ error: Error) {
@@ -268,7 +268,8 @@ extension MainViewController: RestaurantServiceDelegate {
             let restaurantName = self.restaurant?.data?[self.selectedRestaurantIndex].restaurantName
             self.restaurantSelectionButton.setTitle(restaurantName, for: .normal)
             
-            self.menuNameLabel.text = self.menu?.menuName
+            let menuName =  self.restaurant?.data?[self.selectedRestaurantIndex].menus?.first?.menuName
+            self.menuNameLabel.text = menuName
         }
     }
 }
