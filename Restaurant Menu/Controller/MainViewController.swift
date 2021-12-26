@@ -92,6 +92,10 @@ class MainViewController: UIViewController {
         
         let nib = UINib(nibName: "MenuSectionCollectionViewCell", bundle: nil)
         menuSectionCollectionView.register(nib, forCellWithReuseIdentifier: "MenuSectionCell")
+
+        if let flowLayout = menuSectionCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
     }
 
     func setupTableView() {
