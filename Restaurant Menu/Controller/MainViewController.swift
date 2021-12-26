@@ -155,7 +155,7 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 //MARK: - CollectionView Delegate & Datasource
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menu?.menuSections?.count ?? 0
     }
@@ -189,6 +189,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
 
         menuItemTableView.reloadData()
+        menuItemTableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
