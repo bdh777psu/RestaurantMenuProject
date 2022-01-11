@@ -5,7 +5,7 @@
 Get ready! You'll be creating a screen that fetches data from a restaurant API and displays a single restaurant's menu.
 
 
-## ## API Docs
+## API Docs
 [https://documenu.com/docs](https://documenu.com/docs)
 
 ## Technical design
@@ -13,7 +13,7 @@ Get ready! You'll be creating a screen that fetches data from a restaurant API a
 
 
 ## Video demo
-[https://youtu.be/Ib0GMTzd2mY](https://youtu.be/Ib0GMTzd2mY)
+[https://youtu.be/H6DPdCfb0KM](https://youtu.be/H6DPdCfb0KM)
 
 - How does the software work?
 - How did you build the project?
