@@ -13,7 +13,7 @@ Get ready! You'll be creating a screen that fetches data from a restaurant API a
 
 
 ## Video demo
-[https://youtu.be/H6DPdCfb0KM](https://youtu.be/H6DPdCfb0KM)
+[https://youtu.be/IGBsdBJ0z2U](https://youtu.be/IGBsdBJ0z2U)
 
 - How does the software work?
 - How did you build the project?
